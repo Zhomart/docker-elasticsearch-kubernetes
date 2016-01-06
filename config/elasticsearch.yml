@@ -24,8 +24,9 @@ http:
 
 cloud:
   kubernetes:
-    service: ${DISCOVERY_SERVICE}
-    namespace: ${NAMESPACE}
+    service: ${KUBERNETES_DISCOVERY_SERVICE}
+    namespace: ${KUBERNETES_NAMESPACE}
+
 discovery:
     type: kubernetes
     zen.ping.multicast.enabled: false

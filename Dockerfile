@@ -1,4 +1,5 @@
-FROM elasticsearch:2.1
+# Using 2.1.0 because plugin elasticsearch-cloud-kubernetes has not version 2.1.1 yet.
+FROM elasticsearch:2.1.0
 
 MAINTAINER mzhomart@gmail.com
 
@@ -10,4 +11,8 @@ RUN /usr/share/elasticsearch/bin/plugin install io.fabric8/elasticsearch-cloud-k
 
 COPY config/elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
 
-COPY run.sh /
+COPY docker-entrypoint.sh /
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+CMD ["elasticsearch"]
