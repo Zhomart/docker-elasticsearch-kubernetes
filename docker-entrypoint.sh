@@ -20,7 +20,10 @@ export KUBERNETES_NAMESPACE=${KUBERNETES_NAMESPACE:-default-namespace}
 
 # Give permission to lock memory
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html
-sudo ulimit -l unlimited
+#
+# Error: now allowed
+# http://stackoverflow.com/questions/24318543/how-to-set-ulimit-file-descriptor-on-docker-container-the-image-tag-is-phusion
+# ulimit -l unlimited
 
 # Drop root privileges if we are running elasticsearch
 if [ "$1" = 'elasticsearch' ]; then
