@@ -1,0 +1,11 @@
+data:
+  image: tianon/true
+  volumes:
+    - /data
+
+elastic:
+  build: .
+  ports:
+  - "9200:9200"
+  volumes_from:
+  - data
