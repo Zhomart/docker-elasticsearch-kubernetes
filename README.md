@@ -1,5 +1,7 @@
 # docker-elasticsearch-kubernetes
 
+[![Build Status](https://travis-ci.org/Zhomart/docker-elasticsearch-kubernetes.svg)](https://travis-ci.org/Zhomart/docker-elasticsearch-kubernetes.svg)
+
 
 Uses plugin [elasticsearch-cloud-kubernetes](https://github.com/fabric8io/elasticsearch-cloud-kubernetes).
 
