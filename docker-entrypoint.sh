@@ -20,12 +20,13 @@ export KUBERNETES_NAMESPACE=${KUBERNETES_NAMESPACE:-default-namespace}
 
 # Give permission to lock memory
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html
-ulimit -l unlimited
+### ulimit: max locked memory: cannot modify limit: Operation not permitted
+### ulimit -l unlimited
 
 # Drop root privileges if we are running elasticsearch
 if [ "$1" = 'elasticsearch' ]; then
-	# Change the ownership of /usr/share/elasticsearch/data to elasticsearch
-	chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data
+	# Change the ownership of /data to elasticsearch
+	chown -R elasticsearch:elasticsearch /data
 	exec gosu elasticsearch "$@"
 fi
 

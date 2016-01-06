@@ -11,7 +11,7 @@ network.host: _non_loopback:ipv4_
 path:
   data: /data/data
   logs: /data/log
-  plugins: /elasticsearch/plugins
+  plugins: /usr/share/elasticsearch/plugins
   work: /data/work
 
 bootstrap.mlockall: true

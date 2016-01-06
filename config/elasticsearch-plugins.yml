@@ -1,4 +1,4 @@
 # Needed for installing ES plugins
 
 path:
-  plugins: /elasticsearch/plugins
+  plugins: /usr/share/elasticsearch/plugins
